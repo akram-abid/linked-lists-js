@@ -34,6 +34,21 @@ function preAppend(value, list){
         list.head.next = tmp;
     }
 }
+
+function size(list){
+    pointer = list.head;
+    if(list.head == null){
+        return 0;
+    }else{
+        let counter = 0;
+        while(pointer != null ){
+            counter ++;
+            pointer = pointer.next;
+        }
+        return counter;
+    }
+}
+
 let list = new LinkedList();
 
 append(2, list);
@@ -47,3 +62,4 @@ append(4, list);
 preAppend(1, list),
 
 console.log(list);
+console.log("the size of it is", size(list));
